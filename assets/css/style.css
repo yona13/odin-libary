@@ -1,0 +1,90 @@
+:root.dark {
+    --base-text-colour: #f1e9da;
+    --background-colour: #2e294e;
+    --theme-colour: #541388;
+    --theme-background: #f1e9da;
+}
+
+:root.light {
+    --base-text-colour: #2e294e;
+    --background-colour: #f1e9da;
+    --theme-colour: #f1e9da;
+    --theme-background: #541338;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    font-size: 1rem;
+    color: var(--base-text-colour);
+    background-color: var(--background-colour);
+}
+
+.nav {
+    position: relative;
+    height: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-block {
+    position: absolute;
+    top: 1.5rem;
+    right: 4rem;
+    width: 6rem;
+    height: 2rem;
+}
+
+.theme-block i {
+    position: absolute;
+    top: 0.25rem;
+    color: var(--theme-background);
+    font-size: 1.5rem;
+}
+
+.theme-block input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: inherit;
+    width: 4rem;
+    border-radius: 1rem;
+    background-color: var(--theme-background);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: var(--theme-colour);
+    transition: transform .4s ease-in-out;
+}
+
+.theme-block input:checked + .slider:before {
+    transform: translateX(2rem);
+}
+
+.book-form {
+    visibility: hidden;
+}
+
+.footer {
+    height: 5rem;
+    width: 100vw;
+    text-align: center;
+}

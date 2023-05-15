@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin JavaScript Project - Library</title>
+    <script src="https://kit.fontawesome.com/9c11ce4a9b.js" crossorigin="anonymous"></script>
+    <link href="./assets/css/normalise.css" rel="stylesheet"/>
+    <link href="./assets/css/style.css" rel="stylesheet"/>
+    <script src="./assets/js/library.js" defer></script>
+    <script src="./assets/js/layout.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1>library</h1>
+            <label class="theme-block"><i class="fa-regular fa-star"></i><input type="checkbox"><span class="slider"></span></label>
+        </div>
+        <div class="form">
+            <form class="book-form">
+                <input id="title" type="text" placeholder="Title" required>
+                <input id="author" type="text" placeholder="Author" required>
+                <input id="pages" type="number" placeholder="No. Pages">
+                <input name="read" id="read-1" type="radio" value="Read"><label for="read-1">Read</label>
+                <input name="read" id="read-0" type="radio" value="Not Read" checked><label for="read-0">Not Read</label>
+                <button type="submit">Add to Library</button>
+            </form>
+        </div>
+        <div class="display">
+            <div class="library"></div>
+            <div class="new-book"><button class="new-book">+</button></div>
+        </div>
+        <div class="footer">
+            Yona Sandt &#169; 2023
+        </div>
+    </div>
+</body>
+</html>

@@ -17,23 +17,25 @@
             <h1>library</h1>
             <label class="theme-block"><i class="fa-regular fa-star"></i><input type="checkbox"><span class="slider"></span></label>
         </div>
-        <div class="form">
-            <form class="book-form">
-                <input id="title" type="text" placeholder="Title" required>
-                <input id="author" type="text" placeholder="Author" required>
-                <input id="pages" type="number" placeholder="No. Pages">
-                <input name="read" id="read-1" type="radio" value="Read"><label for="read-1">Read</label>
-                <input name="read" id="read-0" type="radio" value="Not Read" checked><label for="read-0">Not Read</label>
-                <button type="submit">Add to Library</button>
-            </form>
-        </div>
         <div class="display">
-            <div class="library"></div>
-            <div class="new-book"><button class="new-book">+</button></div>
+            <div class="library">
+            </div>
+            <button class="new-book">+</button>
         </div>
         <div class="footer">
             Yona Sandt &#169; 2023
         </div>
+    </div>
+    <div class="disable-mode"></div>
+    <div class="form">
+        <form class="book-form">
+            <input id="title" type="text" placeholder="Title" required>
+            <input id="author" type="text" placeholder="Author" required>
+            <input id="pages" type="number" placeholder="No. Pages">
+            <input name="read" id="read-1" type="radio" value="Read"><label for="read-1">Read</label>
+            <input name="read" id="read-0" type="radio" value="Not Read" checked><label for="read-0">Not Read</label>
+            <button type="submit">Add to Library</button>
+        </form>
     </div>
 </body>
 </html>

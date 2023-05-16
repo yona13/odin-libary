@@ -45,6 +45,13 @@ function addBookToLibrary(book) {
 function setup() {
     if (localStorage.getItem("library"))
         library = JSON.parse(localStorage.getItem("library"));
-    else
+    else {
         library = [];
+        const b1 = new Book("The Jungle Book", "Rudyard Kipling", 214, false);
+        const b2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
+        const b3 = new Book("Lord of the Flies", "William Golding", 225, true);
+        library.push(b1);
+        library.push(b2);
+        library.push(b3);
+    }
 }

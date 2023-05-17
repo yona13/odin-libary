@@ -4,7 +4,15 @@
     --form-height: 150px;
     --form-width: 180px;
     --form-padding: 0.8rem;
-    --exit-colour: #6b0504;
+    --standard-unit: 0.5rem;
+    --white: #f1e9da;
+    --read-background: #114b5f;
+    --not-read-background: #f45b69;
+    --onyx: #313638;
+}
+
+:root.tall {
+    --top-bottom-height: 8rem;
 }
 
 :root.dark {
@@ -12,7 +20,8 @@
     --background-colour: #2e294e;
     --theme-colour: #541388;
     --theme-background: #f1e9da;
-    --theme-pale-background: rgba(241, 233, 218, 0.7);
+    --theme-pale-background: #70163c;
+    --exit-colour: #2e294e;
 }
 
 :root.light {
@@ -20,7 +29,23 @@
     --background-colour: #f1e9da;
     --theme-colour: #f1e9da;
     --theme-background: #541338;
-    --theme-pale-background: rgba(84, 19, 56, 0.7);
+    --theme-pale-background: #b7b6c1;
+    --exit-colour: #6b0504;
+}
+
+@font-face {
+    font-family: default-font;
+    src: url("../fonts/PathwayExtreme-Regular.otf");
+}
+
+@font-face {
+    font-family: default-italic;
+    src: url("../fonts/PathwayExtreme-MediumItalic.otf");
+}
+
+body {
+    font-family: default-font;
+    font-size: 1rem;
 }
 
 .container {
@@ -29,7 +54,6 @@
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-    font-size: 1rem;
     color: var(--base-text-colour);
     background-color: var(--background-colour);
 }
@@ -39,7 +63,9 @@
     height: var(--top-bottom-height);
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .theme-block {
@@ -48,6 +74,12 @@
     right: 4rem;
     width: 6rem;
     height: 2rem;
+}
+
+.theme-block.tall {
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
 .theme-block i {
@@ -99,21 +131,30 @@
 .library {
     margin-left: 1rem;
     height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
     justify-content: start;
-    gap: 0.6rem;
+    gap: var(--standard-unit);
 }
 
 .book-card {
     position: relative;
-    width: 10rem;
-    height: 15rem;
+    width: 15rem;
+    height: 20rem;
     text-align: center;
     background-color: var(--theme-pale-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--standard-unit);
+    border-radius: var(--standard-unit);
+}
+
+.book-card > * {
+    margin: 0;
 }
 
 .remove-book-button {
@@ -131,6 +172,20 @@
 
 .book-card h2 {
     font-size: 1.2rem;
+}
+
+.book-button {
+    border: none;
+    color: var(--white);
+    border-radius: var(--standard-unit);
+}
+
+.book-button.read {
+    background-color: var(--read-background);
+}
+
+.book-button.not-read {
+    background-color: var(--not-read-background);
 }
 
 .new-book {
@@ -156,7 +211,6 @@
 
 .form {
     position: fixed;
-    /* z-index: 1; */
     height: var(--form-height);
     width: var(--form-width);
     top: 50%;
@@ -171,6 +225,49 @@
 
 .form.active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+.book-form > input:not([type="radio"]) {
+    background: none;
+    color: var(--background-colour);
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid var(--onyx);
+    margin-bottom: var(--standard-unit);
+}
+
+.book-form > input:focus {
+    outline: 1px solid var(--white);
+    box-shadow: 0 0 var(--standard-unit) var(--white);
+    border-radius: 0.1rem;
+}
+
+.book-form > input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid var(--onyx);
+    transition: 0.3s border ease-in-out;
+}
+
+.book-form > input[type="radio"]:checked {
+    border: 6px solid var(--background-colour);
+}
+
+.book-form > label {
+    margin-left: var(--standard-unit);
+}
+
+.book-form > button {
+    font-family: default-italic;
+    border-radius: var(--standard-unit);
+    border: none;
+    color: var(--base-text-colour);
+    background-color: var(--background-colour);
+    margin-top: var(--standard-unit);
 }
 
 .disable-mode {

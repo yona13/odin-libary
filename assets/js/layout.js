@@ -57,7 +57,8 @@ function createBookCard(book) {
     exitButton.className = "remove-book-button";
     exitButton.textContent = "x";
     exitButton.addEventListener("click", (e) => {
-        removeBookFromLibrary(book);
+        // removeBookFromLibrary(book);
+        library.remove(book);
         render();
     });
 
@@ -117,11 +118,9 @@ function updateLayout() {
  */
 function render() {
     updateLayout();
-    setup();
     libraryContainer.innerHTML = "";
-
-    library.forEach(book => {
-        libraryContainer.appendChild(createBookCard(book));
+    library.collection.forEach(media => {
+        libraryContainer.appendChild(createBookCard(media));
     });
 }
 
@@ -148,11 +147,11 @@ disableMode.addEventListener("click", (e) => {
 bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const newBook = bookFromForm();
-    addBookToLibrary(newBook);
+    library.add(newBook);
+    // addBookToLibrary(newBook);
     formBubble.className = "form";
     disableMode.className = "disable-mode";
 
-    // library.forEach(b => {console.log(b.valueOf())});
     render();
 });
 

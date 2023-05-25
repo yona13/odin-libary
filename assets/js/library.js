@@ -4,7 +4,7 @@ class Media {
      * 
      * All media objects must have a title
      * 
-     * @param {string} title name of media
+     * @param {String} title name of media
      */
     constructor (title) {
         this.title = title;
@@ -41,10 +41,10 @@ class Book extends Media {
      *      - a page count
      *      - read/not read
      * 
-     * @param {string} title book title
-     * @param {string} author book author
-     * @param {int} pages page count
-     * @param {boolean} read read or not
+     * @param {String} title book title
+     * @param {String} author book author
+     * @param {Number} pages page count
+     * @param {Boolean} read read or not
      */
     constructor (title, author, pages, read) {
         super(title);
